@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import DateRange from 'date-range-picker';
+import DateRange from 'date-range-picker_zobor';
 
 class App extends Component {
 
