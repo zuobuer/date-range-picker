@@ -1,13 +1,19 @@
 {
-  "name": "date-range-picker",
+  "name": "date-range-picker_zobor",
   "version": "1.0.0",
   "description": "date range picker for pc with react and sass ",
   "main": "./lib/index.js",
+  "style": "./lib/style.css",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf lib && mkdir lib",
-    "build": "npm run clean && babel src --out-dir lib --copy-files"
+    "build": "npm run clean && babel src --out-dir lib --copy-files",
+    "prepublish": "npm run build"
   },
+  "files": [
+    "lib",
+    "src"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zuobuer/date-range-picker.git"
