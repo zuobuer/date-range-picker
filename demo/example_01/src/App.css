@@ -26,3 +26,29 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+.calendar-footer {
+  /* position: absolute; */
+  width: 100%;
+  /* bottom: 8px; */
+  text-align: center;
+  line-height: 14px;
+}
+
+.calendar-footer .btn {
+  display: inline-block;
+  padding: .5em 1.2em;
+  margin: 0 10px;
+}
+
+.calendar-footer .btn.confirm {
+  background: #eb7350;
+  border: 1px solid #eb7350;
+  color: #fff;
+}
+
+.calendar-footer .btn.cancel {
+  background: #fff;
+  border: 1px solid #ddd;
+}

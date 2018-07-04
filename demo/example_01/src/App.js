@@ -5,10 +5,18 @@ import DateRange from 'date-range-picker';
 
 class App extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      dateRange: this.tools.initDateRange()
+    }
+  }
+
   tools = {
     getLastDay: () => {
+      const dayMSec = 24 * 3600 * 1000;
       let now = new Date(),
-        lastDay = new Date(now.getTime() - 1 * this.dayMSec);
+        lastDay = new Date(now.getTime() - 1 * dayMSec);
       let m = lastDay.getMonth() + 1,
         d = lastDay.getDate(),
         yyyy = lastDay.getFullYear();
@@ -40,9 +48,19 @@ class App extends Component {
     },
   }
 
+  actions = {
+    getRange: () => {
+      let calendar = this.refs.dateRange;
+      var nextRange = calendar.getCurRangeDate();
+      console.log(nextRange);
+      this.setState({
+        dateRange: nextRange,
+      })
+    }
+  }
+
   render() {
-    var initDateRange = this.tools.initDateRange();
-    console.log(initDateRange)
+    const { dateRange } = this.state;
     return (
       <div className="App">
         <header className="App-header">
@@ -53,11 +71,16 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <DateRange
-          startDate={initDateRange.starttime}
-          endDate={initDateRange.endtime}
+          ref="dateRange"
+          startDate={dateRange.starttime}
+          endDate={dateRange.endtime}
           maxDate={this.tools.getLastDay()}
           minDate={new Date("2016-01-01 00:00:00")}
         />
+        <div className='calendar-footer'>
+          <button className='btn confirm' onClick={this.actions.getRange} >确定</button>
+          <button className='btn cancel'>取消</button>
+        </div>
       </div>
     );
   }
