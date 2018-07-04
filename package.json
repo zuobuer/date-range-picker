@@ -1,0 +1,46 @@
+{
+  "name": "date-range-picker",
+  "version": "1.0.0",
+  "description": "date range picker for pc with react and sass ",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf lib && mkdir lib",
+    "build": "npm run clean && babel src --out-dir lib --copy-files"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zuobuer/date-range-picker.git"
+  },
+  "keywords": [
+    "react",
+    "sass",
+    "dateRangePicker",
+    "pc"
+  ],
+  "peerDependencies": {
+    "react": ">=16.0.0",
+    "react-dom": ">=16.0.0"
+  },
+  "author": "zobor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zuobuer/date-range-picker/issues"
+  },
+  "homepage": "https://github.com/zuobuer/date-range-picker#readme",
+  "devDependencies": {
+    "autoprefixer": "^8.6.4",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "bable-loader": "0.0.1-security",
+    "css-loader": "^0.28.11",
+    "postcss-loader": "^2.1.5",
+    "precss": "^3.1.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "style-loader": "^0.21.0"
+  }
+}
